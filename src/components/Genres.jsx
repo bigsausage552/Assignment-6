@@ -12,7 +12,11 @@ function Genres({ genres }) {
           const isActive = location.pathname === `/movies/genre/${genre.id}`;
 
           return (
-            <button key={genre.id} className={`genre-button ${isActive ? "active-genre" : ""}`}><Link to={`/movies/genre/${genre.id}`} className="genre-link">{genre.genre}</Link></button>
+            <button key={genre.id} className={`genre-button ${isActive ? "active-genre" : ""}`}>
+              <Link to={`/movies/genre/${genre.id}`} className="genre-link">
+                {genre.name}
+              </Link>
+            </button>
           );
         })}
       </div>
