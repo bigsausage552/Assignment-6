@@ -41,7 +41,6 @@ function SignUpView() {
     } else {
       alert('You can only select 10 genres');
     }
-    console.log(selectedGenres);
   };
 
   const handleSubmit = (event) => {
