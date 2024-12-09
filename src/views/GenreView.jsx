@@ -23,14 +23,20 @@ function GenreView() {
       <h2>Movies in Genre</h2>
       <div className="genre-view-container">
         {movies.map((movie) => (
-          <div key={movie.id} className="genre-view-item">
-            <Link to={`/movies/details/${movie.id}`}>
-              <img
-                src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
-                alt={movie.title}
-                className="genre-view-image"
-              />
-            </Link>
+          <div>
+            <div key={movie.id} className="genre-view-item">
+              <Link to={`/movies/details/${movie.id}`}>
+                <img
+                  src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
+                  alt={movie.title}
+                  className="genre-view-image"
+                />
+              </Link>
+
+            </div>
+            <button className="add-to-cart-button">
+              Add to Cart
+            </button>
           </div>
         ))}
 
