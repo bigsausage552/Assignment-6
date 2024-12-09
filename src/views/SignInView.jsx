@@ -8,7 +8,7 @@ function SignInView() {
   const [emailInput, setEmailInput] = useState('');
   const [passInput, setPassInput] = useState('');
 
-  const { email, pass } = useStoreContext();
+  const { email, pass, setSignedIn } = useStoreContext();
 
 
   const handleSubmit = (event) => {
@@ -16,6 +16,7 @@ function SignInView() {
 
     if (emailInput === email && passInput === pass) {
       navigate('/');
+      setSignedIn(true);
     } else {
       alert('Wrong email or password');
     }

@@ -1,11 +1,13 @@
 import "./Header.css";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useStoreContext } from "../context/Context";
 
 function Header() {
   const navigate = useNavigate();
   const location = useLocation();
   const isActive = (path) => location.pathname === path;
+  const { signedIn, setSignedIn } = useStoreContext();
 
   return (
     <div className="navbar">
@@ -39,28 +41,55 @@ function Header() {
           </form>
         </div>
 
-        <div className="sign-in-container">
-          <div className="sign-in-button-container">
-            <a
-              href="/signIn"
-              className="signin-btn"
-              onClick={() => navigate("/signin")}
-            >
-              Sign In
-            </a>
+        {signedIn ? (
+          <div className="sign-in-container">
+            <div className="sign-in-button-container">
+              <a
+                href="/signIn"
+                className="signin-btn"
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate("/signin");
+                  setSignedIn(false);
+                }}
+              >
+                Logout
+              </a>
+            </div>
           </div>
-        </div>
-        <div className="sign-in-container">
-          <div className="sign-in-button-container">
-            <a
-              href="/signup"
-              className="signin-btn"
-              onClick={() => navigate("/signup")}
-            >
-              Sign Up
-            </a>
-          </div>
-        </div>
+        ) : (
+          <>
+            <div className="sign-in-container">
+              <div className="sign-in-button-container">
+                <a
+                  href="/signIn"
+                  className="signin-btn"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigate("/signin");
+                  }}
+                >
+                  Sign In
+                </a>
+              </div>
+            </div>
+            <div className="sign-in-container">
+              <div className="sign-in-button-container">
+                <a
+                  href="/signup"
+                  className="signin-btn"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigate("/signup");
+                  }}
+                >
+                  Sign Up
+                </a>
+              </div>
+            </div>
+          </>
+        )}
+
       </div>
     </div>
   );

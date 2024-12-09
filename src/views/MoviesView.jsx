@@ -6,9 +6,9 @@ import { useStoreContext } from "../context/Context.jsx";
 import './MoviesView.css';
 
 function MoviesView() {
-  const { genres } = useStoreContext();
+  const { genres, signedIn } = useStoreContext();
 
-  console.log(genres);
+  console.log(signedIn);
 
   return (
     <div>
