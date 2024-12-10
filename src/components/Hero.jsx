@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
-
+import AddToCartButton from "../components/AddCart.jsx";
 import axios from 'axios';
 import './Hero.css';
 
@@ -32,8 +32,8 @@ function Hero() {
           <p className="featured-text">{movie.overview.length > 200 ? movie.overview.substring(0, 200) + "..." : movie.overview}</p>
 
           <div className="featured-button-container">
-            <button className="featured-button">Add To Cart</button>
-            <button className="featured-button"><Link to={`/movies/details/${movie.id}`}>More Info</Link></button>
+            <AddToCartButton movie={movie} variant="featured-button" />
+            <Link to={`/movies/details/${movie.id}`}><button className="featured-button">More Info</button></Link>
           </div>
         </div>
       )}

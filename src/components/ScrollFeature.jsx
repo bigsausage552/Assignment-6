@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import AddToCartButton from "../components/AddCart.jsx";
 import "./ScrollFeature.css";
 
 function ScrollFeature() {
@@ -67,20 +68,20 @@ function ScrollFeature() {
             <div
               key={movie.id}
               className="movie-list-item"
-              onClick={() => navigate(`/movies/details/${movie.id}`)}
             >
               <img
                 className="movie-list-item-img"
                 src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                 alt={movie.title}
+                onClick={() => navigate(`/movies/details/${movie.id}`)}
               />
-              <span className="movie-list-item-title">{movie.title}</span>
-              <p className="movie-list-item-description">
+              <span className="movie-list-item-title" onClick={() => navigate(`/movies/details/${movie.id}`)}>{movie.title}</span>
+              <p className="movie-list-item-description" onClick={() => navigate(`/movies/details/${movie.id}`)}>
                 {movie.overview.length > 150
                   ? movie.overview.substring(0, 150) + "..."
                   : movie.overview}
               </p>
-              <button className="movie-list-item-button">Add To Cart</button>
+              <AddToCartButton movie={movie} variant="movie-list-item-button" />
             </div>
           ))}
         </div>

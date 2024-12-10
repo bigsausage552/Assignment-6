@@ -7,7 +7,7 @@ function Header() {
   const navigate = useNavigate();
   const location = useLocation();
   const isActive = (path) => location.pathname === path;
-  const { signedIn, setSignedIn } = useStoreContext();
+  const { signedIn, setSignedIn, firstName, lastName } = useStoreContext();
 
   return (
     <div className="navbar">
@@ -32,6 +32,17 @@ function Header() {
           </ul>
         </div>
 
+        {signedIn ? (
+          <>
+            <div className="welcome-container">
+              <p>Welcome, {firstName} {lastName}</p>
+            </div>
+          </>
+        ) : (
+          <>
+          </>
+        )}
+
         <div className="search-bar">
           <form aria-label="Search the site">
             <input className="search-input" type="search" placeholder="Search..." />
@@ -42,27 +53,57 @@ function Header() {
         </div>
 
         {signedIn ? (
-          <div className="sign-in-container">
-            <div className="sign-in-button-container">
-              <a
-                href="/signIn"
-                className="signin-btn"
-                onClick={(e) => {
-                  e.preventDefault();
-                  navigate("/signin");
-                  setSignedIn(false);
-                }}
-              >
-                Logout
-              </a>
+          <>
+            <div className="sign-in-container">
+              <div className="sign-in-button-container">
+                <a
+                  href="/cart"
+                  className="signin-btn"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigate("/cart");
+                  }}
+                >
+                  Cart
+                </a>
+              </div>
             </div>
-          </div>
+            <div className="sign-in-container">
+              <div className="sign-in-button-container">
+                <a
+                  href="/settings"
+                  className="signin-btn"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigate("/settings");
+                  }}
+                >
+                  <i className="fa-solid fa-gear"></i>
+                </a>
+              </div>
+            </div>
+            <div className="sign-in-container">
+              <div className="sign-in-button-container">
+                <a
+                  href="/logout"
+                  className="signin-btn"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setSignedIn(false);
+                    navigate("/signin");
+                  }}
+                >
+                  Logout
+                </a>
+              </div>
+            </div>
+          </>
         ) : (
           <>
             <div className="sign-in-container">
               <div className="sign-in-button-container">
                 <a
-                  href="/signIn"
+                  href="/signin"
                   className="signin-btn"
                   onClick={(e) => {
                     e.preventDefault();
@@ -89,7 +130,6 @@ function Header() {
             </div>
           </>
         )}
-
       </div>
     </div>
   );

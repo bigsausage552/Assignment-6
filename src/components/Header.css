@@ -10,7 +10,8 @@
 .navbar-container {
   display: flex;
   align-items: center;
-  padding: 0 50px;
+  padding: 0 30px;
+  padding-right: 10px;
   height: 100%;
   color: white;
   font-family: 'sen', sans-serif;
@@ -56,6 +57,12 @@
 .menu-list-item a {
   color: inherit;
   text-decoration: none;
+}
+
+.welcome-container {
+  flex: 6;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .search-bar {

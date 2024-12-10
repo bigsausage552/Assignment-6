@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import AddToCartButton from "../components/AddCart.jsx";
 import "./DetailView.css";
 
 function DetailView() {
   const { id } = useParams();
-  const [movie, setMovie] = useState();
+  const [movie, setMovie] = useState(null);
   const [trailers, setTrailers] = useState([]);
 
   useEffect(() => {
@@ -33,9 +34,9 @@ function DetailView() {
             alt={movie.title}
             className="detail-view-poster"
           />
-          <button className="add-to-cart-button">
-            Add to Cart
-          </button>
+          <div className="add-to-cart-button">
+            <AddToCartButton movie={movie} variant="detail-view" />
+          </div>
           <p className="detail-info"><span>Overview: </span>{movie.overview}</p>
           <p className="detail-info"><span>Release Date:</span> {movie.release_date}</p>
           <p className="detail-info"><span>Rating:</span> {movie.vote_average}</p>

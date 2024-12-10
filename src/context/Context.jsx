@@ -10,9 +10,10 @@ export const StoreProvider = ({ children }) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [genres, setGenres] = useState([]);
+  const [cart, setCart] = useState(Map());
 
   return (
-    <StoreContext.Provider value={{ email, setEmail, pass, setPass, genres, setGenres, firstName, setFirstName, lastName, setLastName, signedIn, setSignedIn }}>
+    <StoreContext.Provider value={{ cart, setCart, email, setEmail, pass, setPass, genres, setGenres, firstName, setFirstName, lastName, setLastName, signedIn, setSignedIn }}>
       {children}
     </StoreContext.Provider>
   );

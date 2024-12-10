@@ -15,9 +15,6 @@ function SignUpView() {
 
   const { setEmail, setPass, setFirstName, setLastName, setGenres } = useStoreContext();
 
-
-  // make this fetched from an api
-  // make api only fecthed once and not every view
   const genres = [
     { id: 28, name: 'Action' },
     { id: 80, name: 'Crime' },
@@ -39,10 +36,8 @@ function SignUpView() {
   const handleGenreClick = (id, name) => {
     if (selectedGenres.some((genre) => genre.id === id)) {
       setSelectedGenres(selectedGenres.filter((genre) => genre.id !== id));
-    } else if (selectedGenres.length < 10) {
-      setSelectedGenres([...selectedGenres, { id, name }]);
     } else {
-      alert('You can only select 10 genres');
+      setSelectedGenres([...selectedGenres, { id, name }]);
     }
   };
 
@@ -51,8 +46,8 @@ function SignUpView() {
 
     if (passInput !== confirmPass) {
       alert("Password Don't Match");
-    } else if (selectedGenres.length != 10) {
-      alert("Select 10 genres");
+    } else if (selectedGenres.length < 10) {
+      alert("Select at least 10 genres");
     } else {
       setEmail(emailInput);
       setPass(passInput);

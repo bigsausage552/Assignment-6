@@ -7,6 +7,8 @@ import SignUpView from "./views/SignUpView.jsx";
 import MoviesView from "./views/MoviesView.jsx";
 import GenreView from "./views/GenreView.jsx";
 import DetailView from "./views/DetailView.jsx";
+import SettingsView from "./views/SettingsView.jsx";
+import CartView from "./views/CartView.jsx";
 
 
 function App() {
@@ -21,6 +23,8 @@ function App() {
             <Route path="genre/:genre_id" element={<GenreView />} />
             <Route path="details/:id" element={<DetailView />} />
           </Route>
+          <Route path="/settings" element={<SettingsView />} />
+          <Route path="/cart" element={<CartView />} />
         </Routes>
       </Router>
     </StoreProvider>
