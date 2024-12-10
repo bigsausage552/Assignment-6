@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useStoreContext } from '../context/Context';
+import { Map } from 'immutable';
 import './SignUpView.css';
 
 function SignUpView() {
@@ -13,7 +14,7 @@ function SignUpView() {
   const [confirmPass, setConfirmPass] = useState('');
   const [selectedGenres, setSelectedGenres] = useState([]);
 
-  const { setEmail, setPass, setFirstName, setLastName, setGenres } = useStoreContext();
+  const { setEmail, setPass, setFirstName, setLastName, setGenres, setCart } = useStoreContext();
 
   const genres = [
     { id: 28, name: 'Action' },
@@ -54,6 +55,7 @@ function SignUpView() {
       setFirstName(firstNameInput);
       setLastName(lastNameInput);
       setGenres(selectedGenres);
+      setCart(Map());
 
       navigate('/signin');
     }

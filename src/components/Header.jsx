@@ -91,6 +91,7 @@ function Header() {
                     e.preventDefault();
                     setSignedIn(false);
                     navigate("/signin");
+
                   }}
                 >
                   Logout
