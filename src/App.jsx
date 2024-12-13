@@ -9,7 +9,8 @@ import GenreView from "./views/GenreView.jsx";
 import DetailView from "./views/DetailView.jsx";
 import SettingsView from "./views/SettingsView.jsx";
 import CartView from "./views/CartView.jsx";
-
+import ErrorView from "./views/ErrorView.jsx";
+import ProtectedRoutes from "./components/ProtectedRoutes.jsx";
 
 function App() {
   return (
@@ -19,12 +20,15 @@ function App() {
           <Route path="/" element={<HomeView />} />
           <Route path="/signin" element={<SignInView />} />
           <Route path="/signup" element={<SignUpView />} />
-          <Route path="/movies" element={<MoviesView />}>
-            <Route path="genre/:genre_id" element={<GenreView />} />
-            <Route path="details/:id" element={<DetailView />} />
+          <Route element={<ProtectedRoutes />}>
+            <Route path="/movies" element={<MoviesView />}>
+              <Route path="genre/:genre_id" element={<GenreView />} />
+              <Route path="details/:id" element={<DetailView />} />
+            </Route>
+            <Route path="/settings" element={<SettingsView />} />
+            <Route path="/cart" element={<CartView />} />
           </Route>
-          <Route path="/settings" element={<SettingsView />} />
-          <Route path="/cart" element={<CartView />} />
+          <Route path="*" element={<ErrorView />} />
         </Routes>
       </Router>
     </StoreProvider>
