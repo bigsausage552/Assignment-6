@@ -47,6 +47,7 @@ function SettingsView() {
       setGenres(selectedGenres);
 
       navigate('/');
+      alert("Settings Saved");
     }
   };
 

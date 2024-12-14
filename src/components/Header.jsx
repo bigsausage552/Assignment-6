@@ -64,7 +64,7 @@ function Header() {
                     navigate("/cart");
                   }}
                 >
-                  Cart
+                  <i class="fa-solid fa-cart-shopping"></i>
                 </a>
               </div>
             </div>
