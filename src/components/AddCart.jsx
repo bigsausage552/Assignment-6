@@ -15,7 +15,6 @@ function AddToCartButton({ movie, variant }) {
     } else {
       navigate('/signin');
     }
-
   };
 
   return (

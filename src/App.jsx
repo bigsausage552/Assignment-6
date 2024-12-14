@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { StoreProvider } from "./context/Context.jsx";
-import "./App.css";
 import HomeView from "./views/HomeView.jsx";
 import SignInView from "./views/SignInView.jsx";
 import SignUpView from "./views/SignUpView.jsx";
@@ -11,6 +10,7 @@ import SettingsView from "./views/SettingsView.jsx";
 import CartView from "./views/CartView.jsx";
 import ErrorView from "./views/ErrorView.jsx";
 import ProtectedRoutes from "./components/ProtectedRoutes.jsx";
+import "./App.css";
 
 function App() {
   return (
