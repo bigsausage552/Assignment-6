@@ -17,7 +17,7 @@ function GenreView() {
       setMovies(response.data.results);
     }
     fetchMovies();
-  }, [genre_id, page]);
+  }, []);
 
   return (
     <div>
