@@ -1,9 +1,9 @@
 import { useNavigate, Link } from 'react-router-dom';
 import { useStoreContext } from '../context/Context';
 import { useState } from 'react';
-import './SignInView.css';
+import './LoginView.css';
 
-function SignInView() {
+function LoginView() {
   const navigate = useNavigate();
   const [emailInput, setEmailInput] = useState('');
   const [passInput, setPassInput] = useState('');
@@ -15,7 +15,7 @@ function SignInView() {
     event.preventDefault();
 
     if (emailInput === email && passInput === pass) {
-      navigate('/');
+      navigate('/movies');
       setSignedIn(true);
     } else {
       alert('Wrong email or password');
@@ -54,15 +54,12 @@ function SignInView() {
               <label>Password</label>
             </div>
             <button className="sign-in-btn" type="submit">Sign In</button>
-            <div className="help">
-              <Link to="#">Need help?</Link>
-            </div>
           </form>
-          <p>New to Flixit? <Link to="/signup">Sign up now</Link></p>
+          <p>New to NETDIX? <Link to="/register">Sign up now</Link></p>
         </div>
       </div>
     </div>
   );
 }
 
-export default SignInView;
+export default LoginView;

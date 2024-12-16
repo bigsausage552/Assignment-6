@@ -82,7 +82,7 @@ function SettingsView() {
             <label>Email</label>
           </div>
           <div className="genre-select-container">
-            <h3>Select Your Favorite Genres</h3>
+            <h3>Choose your genres:</h3>
             <div className="genres-grid">
               {availableGenres.map((availableGenre) => (
                 <button

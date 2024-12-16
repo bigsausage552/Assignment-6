@@ -93,13 +93,13 @@ form .sign-up-btn {
   font-weight: 500;
   border-radius: 4px;
   margin: 15px 0 10px;
-  background: rgb(0, 25, 181);
+  background: #ffa31a;
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 form .sign-up-btn:hover {
-  background: rgb(0, 16, 122);
+  background: #ffa31a;
   transform: scale(1.03);
 }
 
@@ -132,6 +132,7 @@ form .help a:hover {
 
 .sign-up p a:hover {
   text-decoration: underline;
+  color: #ffa31a;
 }
 
 .genre-select-container {
@@ -142,19 +143,19 @@ form .help a:hover {
 .genre-select-container h3 {
   color: #fff;
   font-size: 1.3rem;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 
 .genres-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 20px; 
+  justify-content: center; 
+  align-items: start; 
 }
 
 .genre-select-button {
-  width: 120px;
+  width: 181px;
   height: 40px;
   display: flex;
   justify-content: center;
@@ -167,7 +168,7 @@ form .help a:hover {
   color: #fff;
   cursor: pointer;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4), -2px -2px 5px rgba(255, 255, 255, 0.1);
-  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+  transition: 0.3s, transform 0.2s, box-shadow 0.3s;
 }
 
 .genre-select-button:hover {
@@ -177,15 +178,26 @@ form .help a:hover {
 }
 
 .genre-select-button.selected {
-  background: linear-gradient(145deg, rgb(0, 25, 181), rgb(0, 16, 122));
+  background: #ffa31a;
   color: #fff;
   box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.5), -3px -3px 7px rgba(0, 16, 122, 0.5);
   transform: scale(1.08);
 }
 
 .genre-select-button.selected:hover {
-  background: linear-gradient(145deg, rgb(0, 30, 200), rgb(0, 20, 140));
+  background: #ffa31a;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6), -4px -4px 10px rgba(0, 20, 140, 0.6);
+}
+
+.logo-nav {
+  margin-bottom: 20px;
+}
+
+.logo-nav img {
+  width: 100px; 
+  height: auto; 
+  display: block;
+  margin: 0 auto; 
 }
 
 @media (max-width: 740px) {

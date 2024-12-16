@@ -1,6 +1,6 @@
 .featured-content-container {
   position: relative;
-  height: 60vh;
+  height: 70vh;
   width: 100%;
   overflow: hidden;
 }
@@ -64,5 +64,5 @@
 }
 
 .featured-button:hover {
-  background-color: rgb(130, 130, 130);
+  background-color: #ffa31a;
 }

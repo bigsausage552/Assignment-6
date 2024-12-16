@@ -1,6 +1,6 @@
 .feature-list-container {
   padding: 20px 20px;
-  height: 270px;
+  height: 300px;
 }
 
 .titles-container {
@@ -22,6 +22,7 @@
 }
 
 .feature-list-more:hover {
+  color:#ffa31a;
   text-decoration: underline;
   cursor: pointer;
 }
@@ -53,7 +54,8 @@
 }
 
 .feature-list-item:hover .feature-list-item-title,
-.feature-list-item:hover .feature-list-item-description {
+.feature-list-item:hover .feature-list-item-description,
+.feature-list-item:hover .feature-list-item-button {
   opacity: 1;
 }
 
@@ -67,7 +69,8 @@
 }
 
 .feature-list-item-title,
-.feature-list-item-description {
+.feature-list-item-description,
+.feature-list-item-button {
   position: absolute;
   left: 10px;
   right: 10px;
@@ -88,6 +91,22 @@
   font-size: 14px;
   opacity: 0;
   z-index: 2;
+}
+
+.feature-list-item-button {
+  bottom: 40px;
+  padding: 8px 15px;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  border: none;
+  opacity: 0;
+  z-index: 2;
+}
+
+.feature-list-item-button:hover {
+  background-color: #ffa31a;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 800px) {

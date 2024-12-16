@@ -3,9 +3,9 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useStoreContext } from '../context/Context';
 import { Map } from 'immutable';
-import './SignUpView.css';
+import './RegisterView.css';
 
-function SignUpView() {
+function RegisterView() {
   const navigate = useNavigate();
   const [firstNameInput, setFirstNameInput] = useState('');
   const [lastNameInput, setLastNameInput] = useState('');
@@ -23,7 +23,6 @@ function SignUpView() {
     { id: 53, name: 'Thriller' },
     { id: 12, name: 'Adventure' },
     { id: 10751, name: 'Family' },
-    { id: 10402, name: 'Music' },
     { id: 10752, name: 'War' },
     { id: 16, name: 'Animation' },
     { id: 14, name: 'Fantasy' },
@@ -57,7 +56,7 @@ function SignUpView() {
       setGenres(selectedGenres);
       setCart(Map());
 
-      navigate('/signin');
+      navigate('/login');
     }
   };
 
@@ -92,7 +91,7 @@ function SignUpView() {
             </div>
 
             <div className="genre-select-container">
-              <h3>Select Your Favorite Genres</h3>
+              <h3>Choose your genres:</h3>
               <div className="genres-grid">
                 {genres.map((genre) => (
                   <button
@@ -108,15 +107,12 @@ function SignUpView() {
             </div>
 
             <button className="sign-up-btn" type="submit">Sign Up</button>
-            <div className="help">
-              <Link to="#">Need help?</Link>
-            </div>
           </form>
-          <p>Already Have An Account? <Link to="/signin">Sign In</Link></p>
+          <p>Already Have An Account? <Link to="/login">Sign In</Link></p>
         </div>
       </div>
     </div>
   );
 }
 
-export default SignUpView;
+export default RegisterView;

@@ -1,7 +1,6 @@
 .genres-container {
   padding-top: 40px;
-  height: 100%;
-  min-height: 100vh;
+  height: 100vh;
   width: 200px;
   margin: 20px;
   font-family: 'Arial', sans-serif;
@@ -22,8 +21,8 @@
 }
 
 .genre-button {
-  background-color: #007bff;
-  border: none;
+  background-color: transparent;
+  border: 2px solid #ffa31a; 
   padding: 10px 20px;
   border-radius: 5px;
   color: white;
@@ -36,12 +35,13 @@
 }
 
 .genre-button:hover {
-  background-color: #0056b3;
+  background-color: #ffa31a;
   transform: scale(1.05);
 }
 
 .genre-button.active-genre {
-  background-color: #0056b3;
+  background-color: #ffa31a;
+  border-color: #ffa31a;
   transform: scale(1.05);
 }
 

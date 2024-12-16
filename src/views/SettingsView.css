@@ -13,7 +13,6 @@
   color: #fff;
   font-size: 0.95rem;
   padding: 14px 15px 0;
-  /* Adjusted padding */
   transition: all 0.2s ease, transform 0.2s ease;
 }
 
@@ -38,6 +37,17 @@
   transform: translateY(-50%);
   font-size: 0.9rem;
   transition: transform 0.2s ease, font-size 0.2s ease;
+}
+
+.logo-nav {
+  margin-bottom: 20px;
+}
+
+.logo-nav img {
+  width: 100px; 
+  height: auto; 
+  display: block;
+  margin: 0 auto; 
 }
 
 .email-container input:is(:focus, :valid)~label,

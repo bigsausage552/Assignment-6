@@ -1,5 +1,5 @@
 .add-to-cart-button.detail-view {
-  background-color: #007bff;
+  background-color: #ffa31a;
   border: none;
   margin-bottom: 0px;
   padding: 10px 20px;
@@ -15,7 +15,7 @@
 }
 
 .add-to-cart-button.detail-view:hover {
-  background-color: #024d9c;
+  background-color: #ffa31a;
 }
 
 .add-to-cart-button.feature {
@@ -38,6 +38,6 @@
 }
 
 .add-to-cart-button.feature:hover {
-  background-color: gray;
+  background-color: #ffa31a;
   cursor: pointer;
 }

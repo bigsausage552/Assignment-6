@@ -3,7 +3,6 @@ import Header from "../components/Header.jsx";
 import Hero from "../components/Hero.jsx";
 import Feature from "../components/Feature.jsx";
 import Footer from "../components/Footer.jsx";
-import ScrollFeature from "../components/ScrollFeature.jsx";
 
 function HomeView() {
   return (
@@ -11,7 +10,6 @@ function HomeView() {
       <Header />
       <Hero />
       <Feature />
-      <ScrollFeature />
       <Footer />
     </div>
   )

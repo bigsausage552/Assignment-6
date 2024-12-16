@@ -13,7 +13,7 @@ function AddToCartButton({ movie, variant }) {
         : cart.set(movie.id, movie);
       setCart(updatedCart);
     } else {
-      navigate('/signin');
+      navigate('/login');
     }
   };
 

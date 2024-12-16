@@ -5,7 +5,7 @@ function ProtectedRoutes() {
     const { signedIn } = useStoreContext();
 
     return (
-        signedIn ? <Outlet /> : <Navigate to="/signin" />
+        signedIn ? <Outlet /> : <Navigate to="/login" />
     )
 }
 

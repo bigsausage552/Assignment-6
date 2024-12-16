@@ -6,8 +6,19 @@
   align-items: center;
 }
 
+.logo-nav {
+  margin-bottom: 20px;
+}
+
+.logo-nav img {
+  width: 100px; 
+  height: auto; 
+  display: block;
+  margin: 0 auto; 
+}
+
 .error-title {
-  color: rgb(0, 25, 181);
+  color: #ffa31a;
   font-size: 2rem;
   font-family: Arial, sans-serif;
 }
